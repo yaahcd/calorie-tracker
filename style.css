@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #619b8a;
+  height: 70px;
+}
+
+header h1 {
+  margin-left: 30px;
+  color: white;
+}
+
+header button {
+  background: none;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background: white;
+  color: black;
+}
+
+.btn-container {
+  margin-right: 30px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  width: 90vw;
+}
+
+.stats-first-row {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.calorie-limit {
+  display: flex;
+  margin: 5px;
+  color: white;
+  background-color: #233d4d;
+  width: 50%;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.card-body {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.calorie-gain-loss {
+  display: flex;
+  margin: 5px;
+  color: white;
+  background-color: #619b8a;
+  width: 50%;
+  height: 120px;
+  border-radius: 10px;
+}
+
+#calories-total,
+#calories-limit,
+#calories-consumed,
+#calories-burned,
+#calories-remaining {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px;
+}
+
+.stats-second-row {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calories-consumed-container,
+.calories-burned-container,
+.calories-remaining-container {
+  display: flex;
+  margin: 5px;
+  width: 33%;
+  height: 120px;
+  border-radius: 10px;
+  color: black;
+  background-color: #e0e1dd;
+}
+
+.calories-remaining-container.red {
+  background-color: #780000;
+}
+
+.progress-tracker {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  height: 18px;
+  border-radius: 5px;
+  background-color: #e0e1dd;
+}
+
+.progress-bar {
+  display: flex;
+  width: 90%;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.progress-bar.red {
+  background-color: #780000;
+}
+
+.progress-bar.green {
+  background-color: #619b8a;
+}
+
+.meals-workouts-container {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+}
+
+.meals-container {
+  font-weight: lighter;
+  width: 50%;
+  margin: 5px 15px 15px 0;
+}
+
+.meals-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.meals-header button {
+  padding: 10px;
+  background: #619b8a;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.meals-header button:hover {
+  font-weight: 700;
+}
+
+.workouts-container {
+  margin: 5px 0 15px 15px;
+  width: 50%;
+}
+
+.workouts-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.workouts-header button {
+  padding: 10px;
+  background: #fe7f2d;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.workouts-header button:hover {
+  font-weight: 700;
+}
+
+#workout-form-container,
+#meal-form-container {
+  display: none;
+  margin-top: 15px;
+  background-color: #e0e1dd;
+  border-radius: 10px;
+  border: 1px solid #c5c7c1;
+}
+
+#workout-form-container input,
+#meal-form-container input {
+  display: table;
+  margin: auto;
+  padding: 6px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #c5c7c1;
+  width: 90%;
+  height: 25px;
+}
+
+#workout-form-container button,
+#meal-form-container button {
+  display: table;
+  margin: 15px auto;
+  padding: 6px;
+  background: #fe7f2d;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  width: 90%;
+}
+
+#workout-form-container button:hover,
+#meal-form-container button:hover {
+  font-weight: 700;
+}
+
+#meal-form-container button {
+  background: #619b8a;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 50px auto 10px;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-container.second {
+  margin-left: 30px;
+}
+
+.input-container input {
+  display: table;
+  margin: auto;
+  width: 100%;
+  height: 25px;
+  padding: 5px 0;
+  border-radius: 10px;
+  border: 1px solid #c5c7c1;
+}
+
+.new-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  padding: 10px;
+  border: 1px solid #c5c7c1;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.workout-calorie,
+.meal-calorie {
+  font-weight: lighter;
+  background-color: #619b8a;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.workout-calorie {
+  background-color: #fe7f2d;
+}
+
+.new-item-card button {
+  padding: 5px 10px;
+  background-color: #780000;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.new-item-card button:hover {
+  font-weight: 900;
+}
+
+#overlay,
+#modal-body {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal-body {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 500px;
+  max-width: 90%;
+  height: 200px;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#limit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#limit-form label {
+  font-size: 23px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #c5c7c1;
+}
+
+#limit-form input {
+  border-radius: 10px;
+  border: 1px solid #c5c7c1;
+  height: 25px;
+  padding: 5px;
+  margin: 5px 5px 20px;
+}
+
+#limit-form button {
+  align-self: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #619b8a;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#limit-form button:hover {
+  opacity: 0.8;
+}
+
+#overlay.hide,
+#modal-body.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal-body.hide {
+  top: 0;
+}
+
+.modal-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+  background-color: #780000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.modal-btn:hover {
+  font-weight: 900;
+}
