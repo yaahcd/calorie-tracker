@@ -124,15 +124,11 @@ class CalorieTracker {
     caloriesRemainingEl.innerHTML = remaining;
 
     if (remaining <= 0) {
-       caloriesRemainingEl.parentElement.parentElement.classList.add(
-        "red"
-      );
+      caloriesRemainingEl.parentElement.parentElement.classList.add("red");
       progressBarEl.classList.remove("green");
       progressBarEl.classList.add("red");
     } else {
-      caloriesRemainingEl.parentElement.parentElement.classList.remove(
-        "red"
-      );
+      caloriesRemainingEl.parentElement.parentElement.classList.remove("red");
       progressBarEl.classList.remove("red");
       progressBarEl.classList.add("green");
     }
@@ -154,9 +150,7 @@ class CalorieTracker {
     itemEl.innerHTML = `
                     <h4>${obj.name}</h4>
                     <div
-                      class="${
-                        type === "meal" ? "meal" : "workout"
-                      }-calorie"
+                      class="${type === "meal" ? "meal" : "workout"}-calorie"
                     >
                      ${obj.calories}
                     </div>
