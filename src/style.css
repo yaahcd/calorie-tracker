@@ -411,3 +411,64 @@ header button:hover {
 .modal-btn:hover {
   font-weight: 900;
 }
+
+@media (max-width: 790px){
+
+  .stats-first-row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .stats-second-row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .calorie-limit, .calorie-gain-loss, .calories-consumed-container,
+  .calories-burned-container,
+  .calories-remaining-container {
+    width: 90vw;
+  }
+
+  .meals-workouts-container {
+    flex-direction: column;
+  }
+
+  .workouts-container, .meals-container {
+    width: 90vw;
+  }
+
+  .meals-container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #c5c7c1;
+  }
+
+  .filter-container {
+    display: none;
+  }
+
+  .progress-tracker {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 510px) {
+  header {
+    height: 85px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  
+  }
+
+  header h1 {
+    margin: 0;
+  }
+
+  .btn-container {
+    margin: auto;
+    align-items: center;
+  }
+
+}
