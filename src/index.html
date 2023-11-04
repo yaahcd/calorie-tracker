@@ -1,91 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/meal.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/meal.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <script type="module" src="App.js"></script>
     <title>Calorie tracker</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Calorie Tracker</h1>
-        <div class="btn-container">
-        <button id="modal">
-            Set Daily Limit
-        </button>
+      <h1>Calorie Tracker</h1>
+      <div class="btn-container">
+        <button id="modal">Set Daily Limit</button>
         <button id="reset">Reset Day</button>
-        </div>
+      </div>
     </header>
 
-  <section class="stats">
-    <div class="stats-first-row">
-      <div class="calorie-limit">
-        <div class="card-body">
-          <div id="calories-limit"></div>
-          <p>Daily Calorie Limit</p>
+    <section class="stats">
+      <div class="stats-first-row">
+        <div class="calorie-limit">
+          <div class="card-body">
+            <div id="calories-limit"></div>
+            <p>Daily Calorie Limit</p>
+          </div>
+        </div>
+        <div class="calorie-gain-loss">
+          <div class="card-body">
+            <div id="calories-total"></div>
+            <p>Gain/Loss</p>
+          </div>
         </div>
       </div>
-      <div class="calorie-gain-loss">
-        <div class="card-body">
-          <div id="calories-total"></div>
-          <p>Gain/Loss</p>
+      <div class="stats-second-row">
+        <div class="calories-consumed-container">
+          <div class="card-body">
+            <div id="calories-consumed"></div>
+            <p>Calories Consumed</p>
+          </div>
+        </div>
+        <div class="calories-burned-container">
+          <div class="card-body">
+            <div id="calories-burned"></div>
+            <p>Calories Burned</p>
+          </div>
+        </div>
+        <div class="calories-remaining-container">
+          <div class="card-body">
+            <div id="calories-remaining"></div>
+            <p>Calories Remaining</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="stats-second-row">
-      <div class="calories-consumed-container">
-        <div class="card-body">
-          <div id="calories-consumed"></div>
-          <p>Calories Consumed</p>
+    </section>
+
+    <section class="progress-tracker">
+      <div id="calorie-progress" class="progress-bar"></div>
+    </section>
+
+    <section class="filter-container">
+      <div class="input-container">
+        <input type="text" id="filter-meals" placeholder="Filter Meals..." />
+      </div>
+
+      <div class="input-container second">
+        <input
+          type="text"
+          id="filter-workouts"
+          placeholder="Filter Workouts..."
+        />
+      </div>
+    </section>
+
+    <section class="meals-workouts-container">
+      <div class="meals-container">
+        <div class="meals-header">
+          <h2>Meals / Food Items</h2>
+          <button id="btn-collapse">+ Add Meal</button>
         </div>
-      </div>
-      <div class="calories-burned-container">
-        <div class="card-body">
-          <div id="calories-burned"></div>
-          <p>Calories Burned</p>
-        </div>
-      </div>
-      <div class="calories-remaining-container">
-        <div class="card-body">
-          <div id="calories-remaining"></div>
-          <p>Calories Remaining</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="progress-tracker">
-    <div id="calorie-progress" class="progress-bar"></div>
-  </section>
-
-  <section class="filter-container">
-    <div class="input-container">
-      <input
-        type="text"
-        id="filter-meals"
-        placeholder="Filter Meals..."
-      />
-    </div>
-
-    <div class="input-container second">
-      <input
-        type="text"
-        id="filter-workouts"
-        placeholder="Filter Workouts..."
-      />
-    </div>
-  </section>
-
-  <section class="meals-workouts-container">
-    <div class="meals-container">
-      <div class="meals-header">
-        <h2>Meals / Food Items</h2>
-        <button id="btn-collapse">+ Add Meal</button>
-      </div>
-
-      <div id="meal-form-container">
+        <div id="meal-form-container">
           <form id="meal-form">
             <input
               type="text"
@@ -100,62 +94,48 @@
             />
             <button type="submit">Add Meal Item</button>
           </form>
+        </div>
+
+        <div id="meal-items"></div>
       </div>
 
-      <div id="meal-items"></div>
-    </div>
+      <div class="workouts-container">
+        <div class="workouts-header">
+          <h2>Workouts</h2>
+          <button id="btn-collapse">+ Add Workout</button>
+        </div>
 
-    <div class="workouts-container">
-      <div class="workouts-header">
-        <h2>Workouts</h2>
-        <button id="btn-collapse">+ Add Workout</button>
+        <div id="workout-form-container">
+          <form id="workout-form">
+            <input type="text" id="workout-name" placeholder="Enter Workout" />
+            <input
+              type="number"
+              id="workout-calories"
+              placeholder="Enter Calories"
+            />
+            <button type="submit">Add Workout Item</button>
+          </form>
+        </div>
+
+        <div id="workout-items"></div>
       </div>
+    </section>
 
-      <div id="workout-form-container">
-        <form id="workout-form">
+    <div id="overlay" class="hide"></div>
+    <div id="modal-body" class="hide">
+      <div class="modal-form-container">
+        <button type="button" class="modal-btn" id="close-modal">&#10005</button>
+        <form id="limit-form">
+          <label for="limit" class="form-label">Daily Calorie Limit</label>
           <input
             type="text"
-            id="workout-name"
-            placeholder="Enter Workout"
+            class="form-control"
+            id="limit"
+            placeholder="2000"
           />
-          <input
-            type="number"
-            id="workout-calories"
-            placeholder="Enter Calories"
-          />
-          <button type="submit">Add Workout Item</button>
+          <button type="submit" id="close-modal" class="hide">save</button>
         </form>
       </div>
-
-      <div id="workout-items"></div>
     </div>
-  </section>
-
-     
-        <div id="overlay" class="hide"></div>
-        <div id="modal-body" class="hide">
-          <div class="modal-form-container">
-            <button
-            type="button"
-            class="modal-btn"
-            id="close-modal"
-          >&#10005</button>
-            <form id="limit-form">
-              <label for="limit" class="form-label"
-                >Daily Calorie Limit</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="limit"
-                placeholder="2000"
-              />
-              <button type="submit" id="close-modal" class="hide">save</button>
-            </form>
-          </div>
-        </div>
-     
-   
-  </div>
-</body>
+  </body>
 </html>
