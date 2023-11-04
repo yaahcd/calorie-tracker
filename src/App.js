@@ -1,5 +1,6 @@
 import CalorieTracker from "./Tracker.js";
 import { Workout, Meal } from "./Items.js";
+import './style.css'
 
 class App {
   constructor() {
