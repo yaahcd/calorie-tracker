@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/meal.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="App.js"></script>
     <title>Calorie tracker</title>
 </head>
 <body>
@@ -64,7 +65,7 @@
       <input
         type="text"
         id="filter-meals"
-        placeholder=" Filter Meals..."
+        placeholder="Filter Meals..."
       />
     </div>
 
@@ -72,7 +73,7 @@
       <input
         type="text"
         id="filter-workouts"
-        placeholder=" Filter Workouts..."
+        placeholder="Filter Workouts..."
       />
     </div>
   </section>
@@ -85,20 +86,20 @@
       </div>
 
       <div id="meal-form-container">
-        <form id="meal-form">
-          <input
-            type="text"
-            id="meal-name"
-            placeholder="Enter Meal or Item"
-          />
-          <input
-            type="number"
-            class="form-control"
-            id="meal-calories"
-            placeholder="Enter Calories"
-          />
-          <button type="submit">Add Meal Item</button>
-        </form>
+          <form id="meal-form">
+            <input
+              type="text"
+              id="meal-name"
+              placeholder="Enter Meal or Item"
+            />
+            <input
+              type="number"
+              class="form-control"
+              id="meal-calories"
+              placeholder="Enter Calories"
+            />
+            <button type="submit">Add Meal Item</button>
+          </form>
       </div>
 
       <div id="meal-items"></div>

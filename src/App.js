@@ -55,20 +55,24 @@ class App {
   }
 
   _collapseButton(e) {
-    if (e.target.innerText.indexOf("Workout") > 1) {
+    if (e.target.innerText.indexOf("Workout") != -1) {
       const form = document.getElementById(`workout-form-container`);
       if (form.style.display === "block") {
         form.style.display = "none";
+        form.classList.remove('open')
       } else {
+        form.classList.add('open')
         form.style.display = "block";
       }
     }
 
-    if (e.target.innerText.indexOf("Meal") > 1) {
+    if (e.target.innerText.indexOf("Meal") != -1) {
       const form = document.getElementById(`meal-form-container`);
       if (form.style.display === "block") {
         form.style.display = "none";
+        form.classList.remove('open')
       } else {
+        form.classList.add('open')
         form.style.display = "block";
       }
     }

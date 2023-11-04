@@ -133,14 +133,17 @@ header button:hover {
   width: 90%;
   height: 18px;
   border-radius: 5px;
+  transition: height 200ms ease;
 }
 
 .progress-bar.red {
   background-color: #780000;
+  transition: all 200ms ease;
 }
 
 .progress-bar.green {
   background-color: #619b8a;
+  transition: all 200ms ease;
 }
 
 .meals-workouts-container {
@@ -150,53 +153,57 @@ header button:hover {
   margin: auto;
 }
 
-.meals-container {
-  font-weight: lighter;
-  width: 50%;
-  margin: 5px 15px 15px 0;
-}
-
-.meals-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-}
-
-.meals-header button {
-  padding: 10px;
-  background: #619b8a;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-}
-
 .meals-header button:hover {
   font-weight: 700;
 }
 
-.workouts-container {
+.workouts-container, .meals-container {
   margin: 5px 0 15px 15px;
   width: 50%;
 }
 
-.workouts-header {
+.meals-container {
+ margin-left: 0;
+}
+
+.workouts-header, .meals-header {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
 }
 
-.workouts-header button {
+.workouts-header h2, .meals-container h2 {
+  font-weight: 400;
+}
+
+.workouts-header button, .meals-header button {
   padding: 10px;
-  background: #fe7f2d;
+  background: #233d4d;
   border: none;
   border-radius: 10px;
   color: white;
   cursor: pointer;
 }
 
+.meals-header button {
+  background: #619b8a;
+}
+
 .workouts-header button:hover {
   font-weight: 700;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#workout-form-container.open, #meal-form-container.open {
+  animation: fade-in 300ms ease-in;
 }
 
 #workout-form-container,
@@ -206,6 +213,8 @@ header button:hover {
   background-color: #e0e1dd;
   border-radius: 10px;
   border: 1px solid #c5c7c1;
+
+  overflow: hidden;
 }
 
 #workout-form-container input,
@@ -225,7 +234,7 @@ header button:hover {
   display: table;
   margin: 15px auto;
   padding: 6px;
-  background: #fe7f2d;
+  background: #233d4d;
   border: none;
   border-radius: 10px;
   color: white;
@@ -251,6 +260,7 @@ header button:hover {
 }
 
 .input-container {
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -263,10 +273,15 @@ header button:hover {
   margin: auto;
   width: 100%;
   height: 25px;
-  padding: 5px 0;
+  padding: 5px 3px;
   border-radius: 10px;
   border: 1px solid #c5c7c1;
 }
+
+.input-container input::placeholder {
+  padding: 3px;
+}
+
 
 .new-item-card {
   display: flex;
@@ -291,7 +306,7 @@ header button:hover {
 }
 
 .workout-calorie {
-  background-color: #fe7f2d;
+  background-color: #233d4d;
 }
 
 .new-item-card button {
@@ -333,7 +348,7 @@ header button:hover {
   background-color: white;
   width: 500px;
   max-width: 90%;
-  height: 200px;
+  height: 170px;
   z-index: 10;
   border-radius: 10px;
   padding: 10px;
