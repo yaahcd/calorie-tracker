@@ -137,8 +137,11 @@ class CalorieTracker {
   _displayCaloriesProgressBar() {
     const progressBarEl = document.getElementById("calorie-progress");
     const percentage = (this._totalCalories / this._calorieLimit) * 100;
+    console.log('total calories', this._totalCalories );
+    console.log('calorie limit', this._calorieLimit );
     const width = Math.min(percentage, 100);
-    progressBarEl.style.width = `${width}%`;
+    console.log(width)
+    progressBarEl.style.width = width <= 0 ? 0 :`${width}%`;
   }
 
   _displayNewItem(type, obj) {
