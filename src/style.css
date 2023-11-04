@@ -273,7 +273,7 @@ header button:hover {
   margin: auto;
   width: 100%;
   height: 25px;
-  padding: 5px 3px;
+  padding: 5px 5px;
   border-radius: 10px;
   border: 1px solid #c5c7c1;
 }
@@ -293,6 +293,10 @@ header button:hover {
   border-radius: 10px;
   margin: 10px 0;
   font-size: 18px;
+}
+
+.new-item-card h4 {
+  font-weight: 400;
 }
 
 .workout-calorie,
