@@ -414,6 +414,10 @@ header button:hover {
 
 @media (max-width: 790px){
 
+  .stats {
+    margin-top: 30px;
+  }
+
   .stats-first-row {
     flex-direction: column;
     justify-content: center;
@@ -436,6 +440,10 @@ header button:hover {
 
   .workouts-container, .meals-container {
     width: 90vw;
+  }
+
+  .workouts-container {
+    margin-left: 0;
   }
 
   .meals-container {
@@ -463,11 +471,16 @@ header button:hover {
   }
 
   header h1 {
-    margin: 0;
+    font-size: 28px;
+    margin: 10px 0 0 0;
+  }
+
+  header button {
+    padding: 8px;
   }
 
   .btn-container {
-    margin: auto;
+    margin: 0 auto 10px;
     align-items: center;
   }
 
